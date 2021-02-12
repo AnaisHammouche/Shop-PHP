@@ -31,7 +31,7 @@
         <th scope="row">
             <form action="panier.php" method="get">
                 <button type="reset">Supprimer</button>
-                <button type="submit">Valider ma commande</button>
+               <button href='login.php' type="submit">Valider ma commande</button>
         </th>
     </thead>
     </form>

@@ -3,14 +3,16 @@
 session_start();
 
 require "db.php";
+require 'pageP.php';
+
 
 if(isset($_POST['submit'])) {
-
+    
     $verif = $db->prepare("SELECT * FROM users WHERE email = ?");
 
     $verif->execute([$_POST['email']]);
 
-    $result = $verif->fetch(PDD::FETCH_ASSOC);
+    $result = $verif->fetch(PDO::FETCH_ASSOC);
 
 // check empty fields
 if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['cpassword'])) {
@@ -28,6 +30,8 @@ else {
     header('Location: login.php?=sucess');
     die();
     }
+  
+    header('location: pageP.php');
 }
 
 
